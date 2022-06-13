@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+      
+      <!--  dependency injection -->  
+   <bean id="ownerService" name="ownerService" class="com.classpath.pet.service.OwnerService">
+     <constructor-arg name="ownerRepository" ref="ownerRepository"></constructor-arg>
+   </bean>
+   
+   <bean id="ownerRepository" name="ownerRepository" class="com.classpath.pet.repository.OwnerRepository" />
+
+	<bean id="driver" class="com.classpath.pet.util.Driver">
+	  <constructor-arg name="name" value =  "Kishore"/>
+	    <constructor-arg name="age" value =  "25"/>
+	</bean>
+	
+	<bean id="passenger" class="com.classpath.pet.util.Passenger">
+	  <constructor-arg  name="driver" ref="driver"/>
+	</bean>
+	
+   
+   <!--  bean definitions for pet, vet service and pet,vet repository -->
+   
+    
+        
+</beans> 
